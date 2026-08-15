@@ -168,10 +168,10 @@ CREATE TYPE payment_method AS ENUM (
 
 -- Maintenance
 CREATE TYPE review_interval AS ENUM (
-  30,
-  60,
-  90,
-  180
+  '30',
+  '60',
+  '90',
+  '180'
 );
 
 CREATE TYPE review_status AS ENUM (
