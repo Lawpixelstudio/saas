@@ -157,7 +157,7 @@ Si deseas usar Supabase Auth en lugar del login local:
 | `increment_failed_attempts()` | Incrementa intentos fallidos |
 | `reset_failed_attempts()` | Resetea intentos en login exitoso |
 | `calculate_next_review_date()` | Calcula próxima fecha de revisión |
-| `auth.user_role()` | Obtiene rol del usuario actual |
+| `get_user_role()` | Obtiene rol del usuario actual |
 
 ---
 

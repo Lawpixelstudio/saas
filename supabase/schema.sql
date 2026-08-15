@@ -1226,17 +1226,18 @@ CREATE POLICY "activities_read_all" ON project_activities
 
 
 -- ============================================================================
--- 6. FUNCTION: Get user role (para RLS)
+-- 6. HELPER FUNCTIONS (Para RLS policies)
 -- ============================================================================
+-- NOTA: Estas funciones están en public schema porque auth es schema de Supabase
 
 -- Función para obtener el rol del usuario actual
-CREATE OR REPLACE FUNCTION auth.user_role()
+CREATE OR REPLACE FUNCTION get_user_role()
 RETURNS user_role AS $$
   SELECT role FROM user_accounts WHERE id = auth.uid();
 $$ LANGUAGE sql SECURITY DEFINER STABLE;
 
 -- Función para verificar si es Super Admin
-CREATE OR REPLACE FUNCTION auth.is_super_admin()
+CREATE OR REPLACE FUNCTION is_super_admin()
 RETURNS BOOLEAN AS $$
   SELECT EXISTS (
     SELECT 1 FROM user_accounts WHERE id = auth.uid() AND role = 'Super Admin'
@@ -1244,7 +1245,7 @@ RETURNS BOOLEAN AS $$
 $$ LANGUAGE sql SECURITY DEFINER STABLE;
 
 -- Función para verificar si tiene acceso de admin
-CREATE OR REPLACE FUNCTION auth.is_admin()
+CREATE OR REPLACE FUNCTION is_admin()
 RETURNS BOOLEAN AS $$
   SELECT EXISTS (
     SELECT 1 FROM user_accounts WHERE id = auth.uid() 
@@ -1253,7 +1254,7 @@ RETURNS BOOLEAN AS $$
 $$ LANGUAGE sql SECURITY DEFINER STABLE;
 
 -- Función para verificar si tiene acceso financiero
-CREATE OR REPLACE FUNCTION auth.has_finance_access()
+CREATE OR REPLACE FUNCTION has_finance_access()
 RETURNS BOOLEAN AS $$
   SELECT EXISTS (
     SELECT 1 FROM user_accounts WHERE id = auth.uid() 
@@ -1325,7 +1326,7 @@ CREATE POLICY "client_logos_insert_admin" ON storage.objects
   TO authenticated
   WITH CHECK (
     bucket_id = 'client-logos' 
-    AND auth.is_admin()
+    AND is_admin()
   );
 
 CREATE POLICY "documents_authenticated_read" ON storage.objects
@@ -1338,7 +1339,7 @@ CREATE POLICY "documents_insert_admin" ON storage.objects
   TO authenticated
   WITH CHECK (
     bucket_id = 'documents'
-    AND auth.is_admin()
+    AND is_admin()
   );
 
 
