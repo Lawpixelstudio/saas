@@ -1,0 +1,43 @@
+{
+  "name": "goolo-system",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Goolo System - Web Agency ERP & Infrastructure Management",
+  "author": "Goolo Agency",
+  "license": "UNLICENSED",
+  "homepage": "https://saas.maketo.site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goolo-agency/superadmin"
+  },
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit",
+    "deploy": "wrangler pages deploy dist --project-name=goolo-system",
+    "deploy:staging": "wrangler pages deploy dist --project-name=goolo-system-staging"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "canvas-confetti": "^1.9.4",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "wrangler": "^3.0.0"
+  }
+}

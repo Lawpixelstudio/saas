@@ -1,0 +1,62 @@
+{
+  "name": "Goolo System - Web Agency ERP & Infra",
+  "short_name": "Goolo ERP",
+  "description": "Sistema ERP y de gestión de infraestructura para agencias de desarrollo web",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F8FAFC",
+  "theme_color": "#1d8fe6",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities", "finance"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard General",
+      "short_name": "Dashboard",
+      "description": "Ver métricas y telemetría general de la agencia",
+      "url": "/",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Directorio de Clientes",
+      "short_name": "Clientes",
+      "description": "Ver fichas fiscales y credenciales",
+      "url": "/",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Proyectos e Infraestructura",
+      "short_name": "Proyectos",
+      "description": "Gestionar GitHub, Cloudflare, Supabase y telemetría",
+      "url": "/",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Finanzas y Cobros",
+      "short_name": "Finanzas",
+      "description": "Control de MRR y cuentas por cobrar",
+      "url": "/",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [],
+  "start_url": "/",
+  "id": "/",
+  "prefer_related_applications": false
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Goolo System - Web Agency ERP",
+  "description": "Sistema ERP y de gestión de infraestructura para agencias de desarrollo web, con módulos de clientes, finanzas recurrentes, auditorías técnicas y documentación.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
